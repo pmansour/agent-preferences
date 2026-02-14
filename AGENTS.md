@@ -63,7 +63,7 @@ Every code change (feature or bug fix) must include broad test coverage.
 
 ### Test Skill
 
-Use the test-coverage-companion skill at `/Users/peter/src/skills/test-coverage-companion/SKILL.md`. Follow its full workflow for every code change:
+Use the test-coverage-companion skill at `skills/test-coverage-companion/SKILL.md`. Follow its full workflow for every code change:
 
 - **Unit tests**: One fast, isolated test per behavior. Assert outcomes, not internals. Name by behavior, not method. Arrange/Act/Assert structure.
 - **Integration tests**: One per feature. Exercise real dependencies by default; stub only slow/flaky/costly externals.
@@ -130,4 +130,4 @@ gh pr merge <pr-number> --squash --delete-branch
 
 The following skills are available globally and should be used when applicable:
 
-- **test-coverage-companion** (`/Users/peter/src/skills/test-coverage-companion/SKILL.md`): Use on every code change to ensure proper test coverage.
+- **test-coverage-companion** (`skills/test-coverage-companion/SKILL.md`): Use on every code change to ensure proper test coverage.
