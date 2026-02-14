@@ -1,0 +1,4 @@
+interface:
+  display_name: "Test Coverage Companion"
+  short_description: "Plan and add behavior-based test coverage"
+  default_prompt: "Use $test-coverage-companion to add behavior-based unit and integration tests for this code change and run all available tests."
