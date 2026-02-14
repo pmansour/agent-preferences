@@ -94,31 +94,17 @@ Every task must be code-reviewed by a different agent before merge.
 
 ### Review Workflow
 
-1. **Implementing agent** creates a feature branch and opens a PR with the changes.
-2. **Reviewing agent** (the other agent — if Claude Code implemented, Codex reviews, and vice versa) reviews the PR:
-   - Check out the branch via `git worktree`.
-   - Review the diff and leave comments via `gh` CLI.
-3. **Implementing agent** addresses each comment:
-   - Fix issues and push.
-   - Reply to each comment (either confirming the fix or explaining pushback).
-4. **Review loop** continues until the reviewer approves.
-5. **Implementing agent** merges the PR after approval.
+Use the `cross-vendor-pr-review-loop` skill at `skills/cross-vendor-pr-review-loop/SKILL.md` for all implementation PRs.
 
-### Review Commands (Reference)
+The implementing agent must execute that skill end-to-end:
 
-```bash
-# Reviewer: check out PR branch in a worktree
-git worktree add /tmp/review-<branch> <branch>
+1. Create and publish a PR with complete context.
+2. Launch a reviewer agent from a different vendor at the highest-tier model.
+3. Iterate on review comments until quality, testing, CI, and repo-specific requirements are satisfied.
+4. Require reviewer approval before merge.
+5. Merge only after approval and green required checks.
 
-# Reviewer: leave a review comment
-gh pr review <pr-number> --comment --body "..."
-
-# Reviewer: approve
-gh pr review <pr-number> --approve --body "LGTM"
-
-# Implementer: merge after approval
-gh pr merge <pr-number> --squash --delete-branch
-```
+Treat the skill as the source of truth for exact command patterns and loop mechanics.
 
 ## Git Conventions
 
@@ -131,3 +117,4 @@ gh pr merge <pr-number> --squash --delete-branch
 The following skills are available globally and should be used when applicable:
 
 - **test-coverage-companion** (`skills/test-coverage-companion/SKILL.md`): Use on every code change to ensure proper test coverage.
+- **cross-vendor-pr-review-loop** (`skills/cross-vendor-pr-review-loop/SKILL.md`): Use for all implementation PRs to enforce cross-vendor, highest-tier review and comment-resolution loops before merge.
