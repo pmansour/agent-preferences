@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cross-Vendor PR Review Loop"
+  short_description: "Implement, publish, review, and merge PRs safely"
+  default_prompt: "Use $cross-vendor-pr-review-loop to implement the requested change, open a full GitHub PR, run cross-vendor highest-tier review in a comment/fix loop until approved, then merge after CI passes."
