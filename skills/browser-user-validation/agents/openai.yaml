@@ -1,4 +1,0 @@
-interface:
-  display_name: "Browser User Validation"
-  short_description: "Validate changes through an interactive browser flow"
-  default_prompt: "Use $browser-user-validation to verify this completed change through a real browser user flow before final handoff."

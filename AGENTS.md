@@ -92,20 +92,6 @@ When starting a project from scratch, propose a CI plan that covers:
 
 Every task must be code-reviewed by a different agent before merge.
 
-### Review Workflow
-
-Use the `cross-vendor-pr-review-loop` skill at `skills/cross-vendor-pr-review-loop/SKILL.md` for all implementation PRs.
-
-The implementing agent must execute that skill end-to-end:
-
-1. Create and publish a PR with complete context.
-2. Launch a reviewer agent from a different vendor at the highest-tier model.
-3. Iterate on review comments until quality, testing, CI, and repo-specific requirements are satisfied.
-4. Require reviewer approval before merge.
-5. Merge only after approval and green required checks.
-
-Treat the skill as the source of truth for exact command patterns and loop mechanics.
-
 ## Git Conventions
 
 - Descriptive commit messages — clear and readable, no strict conventional-commits format required.
@@ -117,4 +103,3 @@ Treat the skill as the source of truth for exact command patterns and loop mecha
 The following skills are available globally and should be used when applicable:
 
 - **test-coverage-companion** (`skills/test-coverage-companion/SKILL.md`): Use on every code change to ensure proper test coverage.
-- **cross-vendor-pr-review-loop** (`skills/cross-vendor-pr-review-loop/SKILL.md`): Use for all implementation PRs to enforce cross-vendor, highest-tier review and comment-resolution loops before merge.
