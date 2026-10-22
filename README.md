@@ -4,7 +4,7 @@ Global agent configuration for AI coding assistants (Claude Code, Codex, etc.).
 
 Contains:
 - `CLAUDE.md` / `AGENTS.md` — global agent instructions symlinked to `~/`
-- `skills/` — reusable agent skills (test-coverage-companion, browser-user-validation, etc.)
+- `skills/` — reusable agent skills for test coverage and flight searches with cash and points
 
 ## Setup
 
