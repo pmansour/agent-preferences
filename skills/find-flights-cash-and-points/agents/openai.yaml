@@ -1,0 +1,4 @@
+interface:
+  display_name: "Flights: Cash & Points"
+  short_description: "Find concrete cash and award trips across flexible dates"
+  default_prompt: "Use $find-flights-cash-and-points to find 2–5 concrete itineraries across my date ranges, comparing cash, my card points, and airline miles. Set up or reuse my private traveler profile."
